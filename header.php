@@ -1,27 +1,28 @@
 <?php
-	$menu = '
+$menu = '
 		<li><a href="index.php">О нас</a></li>
 		<li><a href="catalog.php">Каталог</a></li>
 		<li><a href="where.php">Где нас найти?</a></li>
 		%s
 	';
 
-	$m = '';
-	if(isset($_SESSION["role"])) {
-		$m = '<li><a href="cart.php">Корзина</a></li>';
-		$m .= ($_SESSION["role"] == "admin") ? '<li><a href="admin">Заказы</a></li>' : '';
-		$m .= '<li><a href="controllers/logout.php">Выход</a></li>';
-	} else
-		$m = '
+$m = '';
+if (isset($_SESSION["role"])) {
+	$m = '<li><a href="cart.php">Корзина</a></li>';
+	$m .= ($_SESSION["role"] == "admin") ? '<li><a href="admin">Заказы</a></li>' : '';
+	$m .= '<li><a href="controllers/logout.php">Выход</a></li>';
+} else
+	$m = '
 			<li><a href="index.php#login"><button>Вход</button></a></li>
 			<li><a href="index.php#register"><button>Регистрация</button></a></li>
 		';
 
-	$menu = sprintf($menu, $m);
+$menu = sprintf($menu, $m);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +33,7 @@
 		let role = "<?= (isset($_SESSION["role"])) ? $_SESSION["role"] : "guest" ?>";
 	</script>
 </head>
+
 <body>
 
 	<header>

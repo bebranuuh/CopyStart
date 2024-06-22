@@ -5,6 +5,7 @@
 			</ul>
 		</div>
 	</footer>
-	
-</body>
-</html>
+
+	</body>
+
+	</html>
